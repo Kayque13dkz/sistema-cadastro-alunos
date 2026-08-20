@@ -5,6 +5,7 @@
 const formulario = document.getElementById("formAluno");
 const campoNome = document.getElementById("nome");
 const campoEmail = document.getElementById("email");
+const campoCurso = document.getElementById("curso");
 const listaAlunos = document.getElementById("listaAlunos");
 
 // ==================================================
@@ -25,12 +26,13 @@ function cadastrarAluno(event) {
     // Obtém os valores dos campos
     const nome = campoNome.value;
     const email = campoEmail.value;
+    const curso = campoCurso.options[campoCurso.selectedIndex].text;
 
     // Cria um novo elemento de lista
     const aluno = document.createElement("li");
 
     // Insere as informações do aluno
-    aluno.textContent = `${nome} - ${email}`;
+   aluno.textContent = `${nome} - ${email} - ${curso}`;
 
     // Adiciona o aluno na lista
     listaAlunos.appendChild(aluno);
